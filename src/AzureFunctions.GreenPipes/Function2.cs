@@ -11,7 +11,7 @@ namespace AzureFunctions.GreenPipes
         [FunctionName("Function2")]
         public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")]HttpRequestMessage req, TraceWriter log)
         {
-            var context = new HttpFunctionRequestContext(nameof(Function1), req);
+            var context = new HttpFunctionRequestContext(nameof(Function2), req);
 
             await Pipelines.Default.Send(context)
                 .ConfigureAwait(false);
